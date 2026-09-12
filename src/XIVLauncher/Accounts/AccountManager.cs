@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
@@ -74,6 +74,7 @@ namespace XIVLauncher.Accounts
         {
             account.Password = string.Empty;
             Accounts.Remove(account);
+            this.Save();
         }
 
         #region SaveLoad
@@ -82,7 +83,7 @@ namespace XIVLauncher.Accounts
 
         public void Save()
         {
-            File.WriteAllText(ConfigPath,  JsonConvert.SerializeObject(Accounts, Formatting.Indented));
+            File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(Accounts, Formatting.Indented));
         }
 
         public void Load()
