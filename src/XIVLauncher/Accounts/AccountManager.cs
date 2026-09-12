@@ -74,7 +74,6 @@ namespace XIVLauncher.Accounts
         {
             account.Password = string.Empty;
             Accounts.Remove(account);
-            this.Save();
         }
 
         #region SaveLoad
