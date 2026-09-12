@@ -82,7 +82,7 @@ namespace XIVLauncher.Accounts
 
         public void Save()
         {
-            File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(Accounts, Formatting.Indented));
+            File.WriteAllText(ConfigPath,  JsonConvert.SerializeObject(Accounts, Formatting.Indented));
         }
 
         public void Load()
